@@ -6,6 +6,12 @@ Este projeto é uma calculadora funcional e estilizada, desenvolvida com foco na
 
 A calculadora conta com botões responsivos, animações suaves no hover e lógica robusta que previne erros comuns.
 
+## 🔗 Link do Projeto
+
+Você pode acessar a calculadora online aqui:  
+[https://gustavohrdev.github.io/Calculadora-Responsiva-/](https://gustavohrdev.github.io/Calculadora-Responsiva-/)
+
+
 ## Problema que precisei resolver
 
 Muitas calculadoras simples encontradas online não possuem uma interface responsiva, o que dificulta o uso em dispositivos móveis. Além disso, temas escuros muitas vezes têm problemas de contraste e usabilidade. Também percebi a necessidade de criar uma lógica que evitasse bugs como múltiplos pontos decimais, divisão por zero e falhas na interação do usuário.
