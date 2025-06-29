@@ -1,39 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculator</title>
+  <title>Calculadora Avançada com Parênteses e Tema Personalizado</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <input type="text" id="display" disabled />
+
+  
+  <div class="container" role="main" aria-label="Calculadora Avançada Responsiva">
+    
+    
+    <div id="history" aria-live="polite" class="history"></div>
+
+    <div id="current-operation" aria-live="polite" class="current-operation"></div>
+    <input
+      type="text"
+      id="display"
+      readonly
+      aria-label="Display da calculadora"
+      autocomplete="off"
+      spellcheck="false"
+    />
+
     <div class="layout">
-      <button class="white-btn" onclick="clearDisplay()">C</button>
-      <button class="white-btn" onclick="backspace()">←</button>
-      <button class="white-btn" onclick="appendNumber('.')">.</button>
-      <button class="pink-btn" onclick="setOperation('/')">÷</button>
+      <button class="white-btn" onclick="clearDisplay()" aria-label="Limpar">C</button>
+      <button class="white-btn" onclick="memoryClear()" aria-label="Memória limpar">MC</button>
+      <button class="white-btn" onclick="memoryRecall()" aria-label="Memória recuperar">MR</button>
+      <button class="white-btn" onclick="memoryAdd()" aria-label="Memória adicionar">M+</button>
 
-      <button class="white-btn" onclick="appendNumber('7')">7</button>
-      <button class="white-btn" onclick="appendNumber('8')">8</button>
-      <button class="white-btn" onclick="appendNumber('9')">9</button>
-      <button class="pink-btn" onclick="setOperation('*')">×</button>
+      <button class="white-btn" onclick="memorySubtract()" aria-label="Memória subtrair">M-</button>
+      <button class="white-btn" onclick="percentage()" aria-label="Porcentagem">%</button>
+      <button class="white-btn" onclick="backspace()" aria-label="Apagar último caractere">←</button>
+      <button class="pink-btn" onclick="setOperation('/')" aria-label="Dividir">÷</button>
 
-      <button class="white-btn" onclick="appendNumber('4')">4</button>
-      <button class="white-btn" onclick="appendNumber('5')">5</button>
-      <button class="white-btn" onclick="appendNumber('6')">6</button>
-      <button class="pink-btn" onclick="setOperation('-')">-</button>
+      <button class="white-btn" onclick="appendNumber('7')" aria-label="Número 7">7</button>
+      <button class="white-btn" onclick="appendNumber('8')" aria-label="Número 8">8</button>
+      <button class="white-btn" onclick="appendNumber('9')" aria-label="Número 9">9</button>
+      <button class="pink-btn" onclick="setOperation('*')" aria-label="Multiplicar">×</button>
 
-      <button class="white-btn" onclick="appendNumber('1')">1</button>
-      <button class="white-btn" onclick="appendNumber('2')">2</button>
-      <button class="white-btn" onclick="appendNumber('3')">3</button>
-      <button class="pink-btn" onclick="setOperation('+')">+</button>
+      <button class="white-btn" onclick="appendNumber('4')" aria-label="Número 4">4</button>
+      <button class="white-btn" onclick="appendNumber('5')" aria-label="Número 5">5</button>
+      <button class="white-btn" onclick="appendNumber('6')" aria-label="Número 6">6</button>
+      <button class="pink-btn" onclick="setOperation('-')" aria-label="Subtrair">-</button>
 
-      <button class="white-btn wide-btn" onclick="appendNumber('0')">0</button>
-      <button class="pink-btn" onclick="calculate()">=</button>
+      <button class="white-btn" onclick="appendNumber('1')" aria-label="Número 1">1</button>
+      <button class="white-btn" onclick="appendNumber('2')" aria-label="Número 2">2</button>
+      <button class="white-btn" onclick="appendNumber('3')" aria-label="Número 3">3</button>
+      <button class="pink-btn" onclick="setOperation('+')" aria-label="Somar">+</button>
+
+      <button class="white-btn" onclick="appendNumber('(')" aria-label="Parêntese esquerdo">(</button>
+      <button class="white-btn wide-btn" onclick="appendNumber('0')" aria-label="Número 0">0</button>
+      <button class="white-btn" onclick="appendNumber(')')" aria-label="Parêntese direito">)</button>
+      <button class="white-btn" onclick="appendNumber('.')" aria-label="Ponto decimal">.</button>
+
+      <button class="pink-btn" onclick="calculate()" aria-label="Igual">=</button>
+
+      <button class="white-btn" onclick="applySqrt()" aria-label="Raiz quadrada">√</button>
+      <button class="white-btn" onclick="setOperation('^')" aria-label="Potência">^</button>
+      <button class="white-btn" onclick="applySin()" aria-label="Seno">sin</button>
+      <button class="white-btn" onclick="applyCos()" aria-label="Cosseno">cos</button>
     </div>
+
+    <div id="error-message" aria-live="assertive" role="alert" class="error-message"></div>
   </div>
 </body>
 </html>

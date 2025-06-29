@@ -1,5 +1,7 @@
 # 🧮 Calculadora Responsiva com Tema Noturno Profissional / Responsive Calculator with Professional Dark Theme
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00bfff?style=for-the-badge&logo=vercel&logoColor=white)](https://gustavohrdev.github.io/Calculadora-Responsiva-/)
+
 
 ![Print da Calculadora](images/print-calculator.png)
 
